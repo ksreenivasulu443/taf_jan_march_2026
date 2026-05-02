@@ -19,3 +19,15 @@ Step1 - source data, target data
 2. validations
     1.count,duplicate, null,...dq
 3. reporting
+
+##conftest
+##pytest.ini
+#discovery test_table1- 1test & test_table2-2 test
+
+# test1 
+    looks for fixture - read_data
+    looks for applied fixture inside read_data fixture(spark_session, read_config)
+    spark_sessiom, its check any fixture - returns spark hand it over read_data fixture
+    read_conif -- request, config data from config.yml will be read and pass it read_data
+    once all fixture execute then it goes to test case
+# test2
