@@ -23,6 +23,18 @@ def read_config(request):
         config_data = yaml.safe_load(f)
         print("*"*100)
         print("conif data", config_data)
+        print("type of config data", type(config_data))
+        print("source config", config_data['source'])
+        print("target config", config_data['target'])
+        print("validation config", config_data['validation'])
+
+        print("source config path", config_data['source']['path'])
+        print("source config type", config_data['source']['type'])
+        print("source config schema", config_data['source']['schema'])
+
+        print("target config path", config_data['target']['path'])
+        print("target config type", config_data['target']['type'])
+        print("target config schema", config_data['target']['schema'])
         print("*" * 100)
 
     return config_data

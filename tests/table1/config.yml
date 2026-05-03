@@ -1,0 +1,10 @@
+source:
+  path: "s3a://nyc-august-batch-raw/customer-archive/source"
+  type: "csv"
+  schema: "Y"
+target:
+  path: "s3a://nyc-august-batch-raw/customer-archive/target"
+  type: "parquet"
+  schema: "Y"
+validation:
+  key_columns: ['sno']
