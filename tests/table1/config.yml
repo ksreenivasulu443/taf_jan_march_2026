@@ -1,5 +1,5 @@
 source:
-  path: "/Users/admin/PycharmProjects/taf_jan_march_2026/input_files/userdata1.parquet"
+  path: "/Users/admin/PycharmProjects/taf_jan_march_2026/input_files/"
   type: "parquet"
   file_config:
     schema: "NA"
