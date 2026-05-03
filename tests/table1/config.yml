@@ -1,10 +1,18 @@
 source:
-  path: "s3a://nyc-august-batch-raw/customer-archive/source"
+  path: "/Users/admin/PycharmProjects/taf_jan_march_2026/input_files/Contact_info.csv"
   type: "csv"
-  schema: "Y"
+  file_config:
+    schema: "Y"
+    header: True
+    sep: ','
+    inferSchema: True
 target:
-  path: "s3a://nyc-august-batch-raw/customer-archive/target"
-  type: "parquet"
-  schema: "Y"
+  path: "/Users/admin/PycharmProjects/taf_jan_march_2026/input_files/Contact_info.csv"
+  type: "csv"
+  file_config:
+    schema: "N"
+    header: True
+    sep: ','
+    inferSchema: False
 validation:
   key_columns: ['sno']

@@ -2,10 +2,43 @@ import pytest
 from pyspark.sql import SparkSession
 import os
 import yaml
+from src.utility.read_file_lib import read_file
 
 @pytest.fixture(scope='module')
-def read_data(spark_session,read_config):
-    return 'source'
+def read_data(spark_session,read_config, request):
+    # code to read config and create validables for source_config, target_config and validation
+    config_data = read_config
+    spark = spark_session
+    dir_path = request.node.fspath.dirname
+    print("=" * 100)
+    print("config data", config_data)
+    print("=" * 100)
+    source_config = config_data['source']
+    target_config = config_data['target']
+    validation_config = config_data['validation']
+    #Code to read source data
+    if source_config['type'] == 'database':
+        #source_df = read_db()
+        pass
+    else:
+        source_df = read_file(spark = spark,
+                              file_type=source_config['type'],
+                              file_path=source_config['path'],
+                              file_config=source_config['file_config'],
+                              dir_path= dir_path)
+
+    #Code to read target data
+    if target_config['type'] == 'database':
+        #targe_df = read_db()
+        pass
+    else:
+        target_df = read_file(spark = spark,
+                              file_type=target_config['type'],
+                              file_path=target_config['path'],
+                              file_config=target_config['file_config'],
+                              dir_path= dir_path)
+
+    return source_df, target_df
 
 # read_sql is needed only when source/target is database
 # read_schmea is need only when source/target is file
@@ -21,21 +54,21 @@ def read_config(request):
     print("config path", config_path)
     with open(config_path, 'r') as f:
         config_data = yaml.safe_load(f)
-        print("*"*100)
-        print("conif data", config_data)
-        print("type of config data", type(config_data))
-        print("source config", config_data['source'])
-        print("target config", config_data['target'])
-        print("validation config", config_data['validation'])
-
-        print("source config path", config_data['source']['path'])
-        print("source config type", config_data['source']['type'])
-        print("source config schema", config_data['source']['schema'])
-
-        print("target config path", config_data['target']['path'])
-        print("target config type", config_data['target']['type'])
-        print("target config schema", config_data['target']['schema'])
-        print("*" * 100)
+        #print("*"*100)
+        # print("conif data", config_data)
+        # print("type of config data", type(config_data))
+        # print("source config", config_data['source'])
+        # print("target config", config_data['target'])
+        # print("validation config", config_data['validation'])
+        #
+        # print("source config path", config_data['source']['path'])
+        # print("source config type", config_data['source']['type'])
+        # print("source config schema", config_data['source']['schema'])
+        #
+        # print("target config path", config_data['target']['path'])
+        # print("target config type", config_data['target']['type'])
+        # print("target config schema", config_data['target']['schema'])
+        # print("*" * 100)
 
     return config_data
 
