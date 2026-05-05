@@ -75,8 +75,12 @@ def read_config(request):
 
 @pytest.fixture(scope='session')
 def spark_session():
+    taf_jan = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    jar_path = os.path.join(taf_jan, 'jar', 'mssql-jdbc-12.2.0.jre8.jar')
     print("\n this is start spark session fixture")
-    jar_path = "/Users/admin/PycharmProjects/taf_jan_march_2026/jar/mssql-jdbc-12.2.0.jre8.jar"
+    print("taf_jan", taf_jan)
+    print("jar_path", jar_path)
+    #jar_path = "/Users/admin/PycharmProjects/taf_jan_march_2026/jar/mssql-jdbc-12.2.0.jre8.jar"
     spark = (SparkSession.builder.master('local[1]')
              .config("spark.jars", jar_path)
              .config("spark.driver.extraClassPath", jar_path)

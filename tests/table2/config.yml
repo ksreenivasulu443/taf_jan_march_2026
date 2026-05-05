@@ -1,0 +1,14 @@
+source:
+  type: "database"
+  transformation : ["N","NA"]
+  table: "[dbo].[Customers]"
+  env: "qa"
+  exclude_cols: ['create_date','update_date']
+target:
+  type: "database"
+  transformation : ["Y","SQL"]
+  table: "[dbo].[Customers]"
+  env: "qa"
+  exclude_cols: ['create_date','update_date']
+validation:
+  key_columns: ['sno']

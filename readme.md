@@ -32,3 +32,40 @@ Step1 - source data, target data
     once all fixture execute then it goes to test case
 # test2
 
+
+
+
+
+
+
+
+
+source:
+  type: "database"
+  transformation : ["N","NA"]
+  table: "[dbo].[Customers]"
+  env: "qa"
+  exclude_cols: ['create_date','update_date']
+target:
+  type: "database"
+  transformation : ["Y","SQL"]
+  table: "[dbo].[Customers]"
+  env: "qa"
+  exclude_cols: ['create_date','update_date']
+
+pytest -v -s table2/test_table2.py
+1.pytest.init ( empty )
+2. discovering the test methods - 1
+3. runs conftest file
+4. test_count(read_data) : starts executing
+   read_data==>spark_session(spark),read_config(config_data), request ==>fixture
+5. read_data
+
+
+
+
+
+
+
+
+
