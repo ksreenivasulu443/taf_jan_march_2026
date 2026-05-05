@@ -3,6 +3,7 @@ from pyspark.sql import SparkSession
 import os
 import yaml
 from src.utility.read_file_lib import read_file
+from src.utility.read_db_lib import read_db
 
 @pytest.fixture(scope='module')
 def read_data(spark_session,read_config, request):
@@ -18,8 +19,7 @@ def read_data(spark_session,read_config, request):
     validation_config = config_data['validation']
     #Code to read source data
     if source_config['type'] == 'database':
-        #source_df = read_db()
-        pass
+        source_df = read_db(spark = spark,config=source_config,dir_path=dir_path)
     else:
         source_df = read_file(spark = spark,
                               file_type=source_config['type'],
@@ -29,8 +29,7 @@ def read_data(spark_session,read_config, request):
 
     #Code to read target data
     if target_config['type'] == 'database':
-        #targe_df = read_db()
-        pass
+        target_df = read_db(spark=spark,config=target_config,dir_path=dir_path)
     else:
         target_df = read_file(spark = spark,
                               file_type=target_config['type'],
@@ -77,7 +76,12 @@ def read_config(request):
 @pytest.fixture(scope='session')
 def spark_session():
     print("\n this is start spark session fixture")
-    spark = SparkSession.builder.appName("TAF").getOrCreate()
+    jar_path = "/Users/admin/PycharmProjects/taf_jan_march_2026/jar/mssql-jdbc-12.2.0.jre8.jar"
+    spark = (SparkSession.builder.master('local[1]')
+             .config("spark.jars", jar_path)
+             .config("spark.driver.extraClassPath", jar_path)
+             .config("spark.executor.extraClassPath", jar_path)
+             .appName("ETL Automation FW").getOrCreate())
     print("\n this is end of spark session fixture")
     yield spark
     spark.stop()
