@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.10 (taf_jan_march_2026)" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (pytest_framework)" project-jdk-type="Python SDK" />
 </project>
