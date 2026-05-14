@@ -4,11 +4,15 @@ source:
   table: "[dbo].[Customers]"
   env: "qa"
   exclude_cols: ['create_date','update_date']
+
 target:
   type: "database"
   transformation : ["N","SQL"]
-  table: "[dbo].[Customers]"
+  table: "[dbo].[customer_t]"
   env: "qa"
   exclude_cols: ['create_date','update_date']
 validation:
   key_columns: ['customer_id']
+  primary_key_columns: ['customer_id']
+  unique_columns: ['customer_id','phone']
+  not_null_columns: ['customer_id','name','email']

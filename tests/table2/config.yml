@@ -1,9 +1,14 @@
 source:
-  type: "database"
-  transformation : ["N","NA"]
-  table: "[dbo].[Customers]"
-  env: "qa"
-  exclude_cols: ['create_date','update_date']
+  path: "s3a://nyc-august-batch-raw/customer-archive"
+  type: "csv"
+  schema: "Y"
+  options:
+    header: True
+    delimiter: ','
+    inferSchema: False
+    multiline : 'NA'
+    flatten : "NA"
+  exclude_cols: []
 target:
   type: "database"
   transformation : ["Y","SQL"]

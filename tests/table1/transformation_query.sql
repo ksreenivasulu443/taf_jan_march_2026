@@ -1,1 +1,1 @@
-SELECT  * FROM [dbo].[Customers]
+SELECT  customer_id, name,email, phone FROM [dbo].[Customers]
