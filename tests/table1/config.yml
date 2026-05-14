@@ -11,4 +11,4 @@ target:
   env: "qa"
   exclude_cols: ['create_date','update_date']
 validation:
-  key_columns: ['sno']
+  key_columns: ['customer_id']

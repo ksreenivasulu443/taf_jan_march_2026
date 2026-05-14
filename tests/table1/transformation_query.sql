@@ -1,1 +1,1 @@
-SELECT  * FROM [dbo].[Customers] WHERE NAME like 'J%'
+SELECT  * FROM [dbo].[Customers]
