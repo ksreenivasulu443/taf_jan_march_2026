@@ -1,0 +1,16 @@
+source:
+  path: "/Users/admin/PycharmProjects/taf_jan_march_2026/input_files/Contact_info_7.csv"
+  type: "csv"
+  file_config:
+    schema: "N"
+    header: True
+    sep: ","
+    inferSchema: True
+target:
+  type: "database"
+  transformation : ["N","NA"]
+  table: "[dbo].[Customers]"
+  env: "qa"
+  exclude_cols: ['create_date','update_date','batch_date','create_user']
+validation:
+  key_columns: ['sno']
