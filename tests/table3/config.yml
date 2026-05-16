@@ -1,5 +1,5 @@
 source:
-  path: "/Users/admin/PycharmProjects/taf_jan_march_2026/input_files/Contact_info_7.csv"
+  path: "/Users/admin/PycharmProjects/taf_jan_march_2026/input_files/customer_source.csv"
   type: "csv"
   file_config:
     schema: "N"
@@ -9,8 +9,8 @@ source:
 target:
   type: "database"
   transformation : ["N","NA"]
-  table: "[dbo].[Customers]"
+  table: "[dbo].[customer_t]"
   env: "qa"
   exclude_cols: ['create_date','update_date','batch_date','create_user']
 validation:
-  key_columns: ['sno']
+  key_columns: ['customer_id']
