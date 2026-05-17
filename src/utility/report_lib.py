@@ -17,8 +17,8 @@ def write_output(validation_type, status, details):
 
 # write_output(validation_type='dummy', status='dummy status', details = "count failed missing record [1,2,2]")
 
-
-
+#
+#
 # import csv
 # import os
 # from datetime import datetime

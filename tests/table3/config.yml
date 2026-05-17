@@ -14,3 +14,5 @@ target:
   exclude_cols: ['create_date','update_date','batch_date','create_user']
 validation:
   key_columns: ['customer_id']
+  primary_keys: ['customer_id']
+  unique_cols: ['customer_id', 'email']
