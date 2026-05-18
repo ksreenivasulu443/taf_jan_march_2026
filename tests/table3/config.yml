@@ -16,3 +16,4 @@ validation:
   key_columns: ['customer_id']
   primary_keys: ['customer_id']
   unique_cols: ['customer_id', 'email']
+  not_null_cols: ['customer_id', 'name']

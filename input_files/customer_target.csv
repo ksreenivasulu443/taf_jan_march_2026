@@ -4,3 +4,5 @@ customer_id,name,email,phone,batchid
 103,Bob Johnson,bob.johnson@example.com,555-8765,20241230
 104,Eve Davis,eve.davis@example.com,555-4321,20241230
 106,Eve Davis,eve.davis@example.com,555-4321,20241230
+107,NULL,NA,
+108, N/A, null, NA
