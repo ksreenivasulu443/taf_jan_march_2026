@@ -1,0 +1,17 @@
+date : YYYY-MM-DD D-M-YYYY , patten check
+transaction_amount : 10-1000   transanction_amount not between 10 and 1000 range validation
+Name,city, village, state, product name : Sreeni123, sreeni,vas ==> name should contani only Alphabets pattern
+postal code : 5 digit, 4digit, 5 digit, length check
+threshold : Full data ( 100M) , 1M ===> 2.5 %
+
+aggregation ==> sum of month sales
+
+avg : 200-250M
+
+25
+
+APAC - 500K ()
+
+200K
+
+delta

@@ -17,3 +17,5 @@ validation:
   primary_keys: ['customer_id']
   unique_cols: ['customer_id', 'email']
   not_null_cols: ['customer_id', 'name']
+  regex_pattern_col: ['name','[a-zA-Z]']
+  range_col: ['customer_id', 10,100]

@@ -59,4 +59,3 @@ def schema_check(source, target,spark):
         write_output("scheck Check", status, "Schema is correct!")
         return status
 
-# schema_check(source, target, spark)

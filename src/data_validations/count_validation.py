@@ -4,8 +4,10 @@ from src.data_validations.records_only_source import records_only_in_source
 from src.data_validations.records_only_target import records_only_in_target
 
 def count_check(source_df, target_df, key_columns):
+
     src_cnt = source_df.count()
     tgt_cnt = target_df.count()
+    list_row = source_df.collect()
 
     if src_cnt == tgt_cnt:
         status = 'PASS'

@@ -19,8 +19,10 @@ def data_compare(source_df, target_df, key_columns,num_records=10):
     smt = source_df.exceptAll(target_df).withColumn("datafrom", lit("source"))
     tms = target_df.exceptAll(source_df).withColumn("datafrom", lit("target"))
     failed = smt.union(tms)
-
+    failed = failed.persist()
     failed_count = failed.count()
+
+    failed_count = failed.collect()
     if failed_count > 0:
         failed_records = failed.limit(num_records).collect()  # Get the first 5 failing rows
         failed_preview = [row.asDict() for row in failed_records]

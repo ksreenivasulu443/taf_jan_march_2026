@@ -16,7 +16,7 @@ def read_data(spark_session,read_config, request):
     print("=" * 100)
     source_config = config_data['source']
     target_config = config_data['target']
-    validation_config = config_data['validation']
+
     #Code to read source data
     if source_config['type'] == 'database':
         source_df = read_db(spark=spark,config=source_config, dir_path=dir_path)
@@ -55,22 +55,6 @@ def read_config(request):
     print("config path", config_path)
     with open(config_path, 'r') as f:
         config_data = yaml.safe_load(f)
-        #print("*"*100)
-        # print("conif data", config_data)
-        # print("type of config data", type(config_data))
-        # print("source config", config_data['source'])
-        # print("target config", config_data['target'])
-        # print("validation config", config_data['validation'])
-        #
-        # print("source config path", config_data['source']['path'])
-        # print("source config type", config_data['source']['type'])
-        # print("source config schema", config_data['source']['schema'])
-        #
-        # print("target config path", config_data['target']['path'])
-        # print("target config type", config_data['target']['type'])
-        # print("target config schema", config_data['target']['schema'])
-        # print("*" * 100)
-
     return config_data
 
 
