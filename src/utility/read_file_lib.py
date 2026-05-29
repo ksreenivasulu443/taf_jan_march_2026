@@ -1,4 +1,4 @@
-from src.utility.helpers import read_schema,flatten
+from utility.helpers import read_schema,flatten
 
 def read_file(spark, file_type, file_path,file_config,dir_path):
     file_type = file_type.lower().strip()
