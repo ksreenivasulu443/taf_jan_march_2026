@@ -1,7 +1,7 @@
-from src.utility.report_lib import write_output
+from utility.report_lib import write_output
 
-from src.data_validations.records_only_source import records_only_in_source
-from src.data_validations.records_only_target import records_only_in_target
+from data_validations.records_only_source import records_only_in_source
+from data_validations.records_only_target import records_only_in_target
 
 def count_check(source_df, target_df, key_columns):
 
