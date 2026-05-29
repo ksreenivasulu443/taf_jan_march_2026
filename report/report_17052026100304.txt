@@ -1,0 +1,6 @@
+count check: FAIL Details: Count is not matching.Source count is 5 and target count is 14
+                             difference is 9
+ Records Only in Source: FAIL Details: Count: 1, Sample Failed Records: [{'customer_id': 104}]
+ Records Only in Target: FAIL Details: Count: 10, Sample Failed Records: [{'customer_id': 108}, {'customer_id': 101}, {'customer_id': 111}, {'customer_id': None}, {'customer_id': 112}, {'customer_id': 107}, {'customer_id': 102}, {'customer_id': 109}, {'customer_id': 110}, {'customer_id': 106}]
+ Duplicate check:: FAIL Details: Duplicate count: 2 and sample records: [{'customer_id': 101, 'count': 2}, {'customer_id': 102, 'count': 2}]
+ 
