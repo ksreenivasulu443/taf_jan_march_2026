@@ -2,8 +2,8 @@ import pytest
 from pyspark.sql import SparkSession
 import os
 import yaml
-from src.utility.read_file_lib import read_file
-from src.utility.read_db_lib import read_db
+from utility.read_file_lib import read_file
+from utility.read_db_lib import read_db
 
 @pytest.fixture(scope='module')
 def read_data(spark_session,read_config, request):
