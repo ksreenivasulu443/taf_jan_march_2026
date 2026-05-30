@@ -2,8 +2,10 @@ import pytest
 from pyspark.sql import SparkSession
 import os
 import yaml
-from utility.read_file_lib import read_file
-from utility.read_db_lib import read_db
+from src.utility.read_file_lib import read_file
+from src.utility.read_db_lib import read_db
+from dotenv import load_dotenv
+load_dotenv()
 
 @pytest.fixture(scope='module')
 def read_data(spark_session,read_config, request):
@@ -39,7 +41,7 @@ def read_data(spark_session,read_config, request):
                               file_config=target_config['file_config'],
                               dir_path= dir_path)
 
-    return source_df, target_df
+    return source_df.drop(*source_config['exclude_cols']), target_df.drop(*target_config['exclude_cols'])
 
 # read_sql is needed only when source/target is database
 # read_schmea is need only when source/target is file
@@ -62,7 +64,10 @@ def read_config(request):
 @pytest.fixture(scope='session')
 def spark_session():
     taf_jan = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    jar_path = os.path.join(taf_jan, 'jars', 'mssql-jdbc-12.2.0.jre8.jar')
+    azure_storage= os.path.join(taf_jan, "jars", "azure-storage-8.6.6.jar")
+    hadoop_azure= os.path.join(taf_jan, "jars", "hadoop-azure-3.3.1.jar")
+    sql_server= os.path.join(taf_jan, "jars", "mssql-jdbc-12.2.0.jre8.jar")
+    jar_path = azure_storage + ',' + hadoop_azure + ',' + sql_server
     print("\n this is start spark session fixture")
     print("taf_jan", taf_jan)
     print("jar_path", jar_path)
@@ -73,5 +78,11 @@ def spark_session():
              .config("spark.executor.extraClassPath", jar_path)
              .appName("ETL Automation FW").getOrCreate())
     print("\n this is end of spark session fixture")
+    #adls_account_name='stretaildev426'
+    key = os.getenv("ADLS_TOKEN")
+    adls_account_name= os.getenv('ADLS_ACCOUNT_NAME')
+    #key = '+l7+4HKylF4Sk1t1mu1vyvt3k3Ak+jHA0vkdawjITz4NIM3RhpTbU6yDzVE+4MhLl5jM9IeCyuCe+ASttZpC1g=='
+    spark.conf.set(f"fs.azure.account.auth.type.{adls_account_name}.dfs.core.windows.net", "SharedKey")
+    spark.conf.set(f"fs.azure.account.key.{adls_account_name}.dfs.core.windows.net", key)
     yield spark
     spark.stop()

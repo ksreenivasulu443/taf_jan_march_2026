@@ -1,4 +1,4 @@
-from utility.report_lib import write_output
+from src.utility.report_lib import write_output
 
 def records_only_in_target(source_df, target_df, key_columns, failure_count=5):
     """Validate records present only in the target."""

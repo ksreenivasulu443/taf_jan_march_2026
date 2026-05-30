@@ -1,13 +1,13 @@
-from data_validations.count_validation import count_check
-from data_validations.records_only_source import records_only_in_source
-from data_validations.records_only_target import records_only_in_target
-from data_validations.duplicate_validation import duplicate_check
-from data_validations.uniqueness_validation import uniqueness_check
-from data_validations.data_compare_validation import data_compare
-from data_validations.null_value_validation import null_value_check
-from data_validations.schema_validation import schema_check
-from dqe.pattern_validation import regex_check
-from dqe.range_validation import range_check
+from src.data_validations.count_validation import count_check
+from src.data_validations.records_only_source import records_only_in_source
+from src.data_validations.records_only_target import records_only_in_target
+from src.data_validations.duplicate_validation import duplicate_check
+from src.data_validations.uniqueness_validation import uniqueness_check
+from src.data_validations.data_compare_validation import data_compare
+from src.data_validations.null_value_validation import null_value_check
+from src.data_validations.schema_validation import schema_check
+from src.dqe.pattern_validation import regex_check
+from src.dqe.range_validation import range_check
 
 def test_one():
     assert True

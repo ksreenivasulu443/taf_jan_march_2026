@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from utility.helpers import read_query
+from src.utility.helpers import read_query
 
 load_dotenv()
 
