@@ -1,16 +1,16 @@
 source:
-  path: "abfss://raw@stretaildev765.dfs.core.windows.net/customer"
+  path: "abfss://raw@stretaildev765.dfs.core.windows.net/customer/"
   type: "csv"
   transformation : ["y","python"]
   file_config:
-    schema: "N"
+    schema: "Y"
     header: True
     sep: ","
     inferSchema: True
   exclude_cols: ['']
 target:
   type: "database"
-  transformation : ["N","NA"]
+  transformation : ["y","sql"]
   table: "[bronze].[Customer_bronze]"
   env: "qa"
   exclude_cols: ['HashKey','SourceFileName','InsertDate']

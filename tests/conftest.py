@@ -4,6 +4,7 @@ import os
 import yaml
 from src.utility.read_file_lib import read_file
 from src.utility.read_db_lib import read_db
+import subprocess
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -21,6 +22,11 @@ def read_data(spark_session,read_config, request):
 
     #Code to read source data
     if source_config['type'] == 'database':
+        if source_config['transformation'][1].lower() == 'python' and source_config['transformation'][0].lower() == 'y':
+            #python_file_path = dir_path + '/transformation_query.py'
+            python_file_path = os.path.join(dir_path,'transformation_query.py')
+            print("python file name", python_file_path)
+            subprocess.run(["python", python_file_path])
         source_df = read_db(spark=spark,config=source_config, dir_path=dir_path)
 
     else:
