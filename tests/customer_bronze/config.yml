@@ -1,7 +1,7 @@
 source:
   path: "abfss://raw@stretaildev765.dfs.core.windows.net/customer"
   type: "csv"
-  transformation : ["y","python"]
+  transformation : ["N","NA"]
   file_config:
     schema: "N"
     header: True

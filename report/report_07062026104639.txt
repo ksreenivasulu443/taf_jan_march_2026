@@ -1,0 +1,11 @@
+count check: PASS Details: Count is matching.Source count is 3 and target count is 3
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Duplicate check:: PASS Details: No Duplicate found!
+ Uniqueness Check: PASS Details: Duplicate counts per column: {'CustomerID': 0, 'Email': 0}
+ data compare Check: PASS Details: No mismatches found
+ Null Value Check: PASS Details: No null values found.
+ scheck Check: PASS Details: Schema is correct!
+ 

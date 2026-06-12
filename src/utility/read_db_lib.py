@@ -4,14 +4,7 @@ from src.utility.helpers import read_query
 from pyspark.sql import SparkSession
 load_dotenv()
 
-jar_path= "/Users/admin/PycharmProjects/taf_jan_march_2026/jars/mssql-jdbc-12.2.0.jre8.jar"
 
-
-spark = (SparkSession.builder.master('local[1]')
-             .config("spark.jars", jar_path)
-             .config("spark.driver.extraClassPath", jar_path)
-             .config("spark.executor.extraClassPath", jar_path)
-             .appName("ETL Automation FW").getOrCreate())
 
 def read_db(spark,config, dir_path):
     if config['transformation'][0].upper() == 'Y' and config['transformation'][1].upper()=='SQL':
@@ -37,7 +30,7 @@ def read_db(spark,config, dir_path):
 
     return df
 
-def read_table(table):
+def read_table(spark,table):
     df = spark.read.format("jdbc") \
             .option("url",os.getenv("URL")) \
             .option("user", os.getenv("USER_NAME")) \

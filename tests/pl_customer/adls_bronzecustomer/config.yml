@@ -13,7 +13,7 @@ target:
   transformation : ["y","sql"]
   table: "[bronze].[Customer_bronze]"
   env: "qa"
-  exclude_cols: ['HashKey','SourceFileName','InsertDate']
+  exclude_cols: ['HashKey','SourceFileName','InsertDate','rn']
 validation:
   key_columns: ['CustomerID']
   primary_keys: ['CustomerID']

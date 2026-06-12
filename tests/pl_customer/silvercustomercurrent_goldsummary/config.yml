@@ -1,7 +1,7 @@
 source:
   type: "database"
   transformation : ["Y","sql"]
-  table: "[bronze].[Customer_current]"
+  table: "[silver].[Customer_current]"
   env: "qa"
   exclude_cols: ['SourceFileName','InsertDate']
 target:
@@ -9,7 +9,7 @@ target:
   transformation : ["N","NA"]
   table: "[gold].[CustomerSummary]"
   env: "qa"
-  exclude_cols: ['SourceFileName','InsertDate']
+  exclude_cols: ['InsertDate']
 validation:
   key_columns: ['StateName']
   primary_keys: ['StateName']

@@ -1,0 +1,12 @@
+count check: FAIL Details: Count is not matching.Source count is 2 and target count is 5
+                             difference is 3
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: FAIL Details: Count: 3, Sample Failed Records: [{'CustomerID': '3'}, {'CustomerID': '1'}, {'CustomerID': '2'}]
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: FAIL Details: Count: 3, Sample Failed Records: [{'CustomerID': '3'}, {'CustomerID': '1'}, {'CustomerID': '2'}]
+ Duplicate check:: FAIL Details: Duplicate count: 1 and sample records: [{'CustomerID': '1', 'count': 2}]
+ Uniqueness Check: FAIL Details: Duplicate counts per column: {'CustomerID': 1, 'Email': 1}
+ data compare Check: FAIL Details: Data mismatch data: [{'CustomerID': '1', 'CustomerName': 'John Doe', 'Email': 'john@gmail.com', 'PhoneNumber': '9876543210', 'City': 'Bangalore', 'StateName': 'Karnataka', 'datafrom': 'target'}, {'CustomerID': '3', 'CustomerName': 'Smith', 'Email': 'smith@gmail.com', 'PhoneNumber': '9876543212', 'City': 'Chennai', 'StateName': 'Tamil Nadu', 'datafrom': 'target'}, {'CustomerID': '2', 'CustomerName': 'anil Kumar', 'Email': 'ram@gmail.com', 'PhoneNumber': '9876543211', 'City': 'Hyderabad', 'StateName': 'Telangana', 'datafrom': 'target'}]
+ Null Value Check: PASS Details: No null values found.
+ scheck Check: PASS Details: Schema is correct!
+ 

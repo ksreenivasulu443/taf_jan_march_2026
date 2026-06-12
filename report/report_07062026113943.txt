@@ -1,0 +1,12 @@
+count check: FAIL Details: Count is not matching.Source count is 3 and target count is 4
+                             difference is 1
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: FAIL Details: Count: 1, Sample Failed Records: [{'CustomerID': '4'}]
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: FAIL Details: Count: 1, Sample Failed Records: [{'CustomerID': '4'}]
+ Duplicate check:: PASS Details: No Duplicate found!
+ Uniqueness Check: PASS Details: Duplicate counts per column: {'CustomerID': 0, 'Email': 0}
+ data compare Check: FAIL Details: Data mismatch data: [{'CustomerID': '1', 'CustomerName': 'JOHN DOE', 'Email': 'john@gmail.com', 'PhoneNumber': '9876543210', 'City': 'BANGALORE', 'StateName': 'KARNATAKA', 'HashKey': '967CB7818E2D5FB07DEDAF7156F9BAB3AAB7CEFBC8ECFB854A176123BCC6E362', 'datafrom': 'source'}, {'CustomerID': '1', 'CustomerName': 'SREENI', 'Email': 'john@gmail.com', 'PhoneNumber': '9876543210', 'City': 'BANGALORE', 'StateName': 'KARNATAKA', 'HashKey': '770AAABDBD4748E7E1730D7F40B3C27E5626EA45AC6C9662D68D33C5479A1C55', 'datafrom': 'target'}, {'CustomerID': '4', 'CustomerName': 'TEST1', 'Email': 'test@gmail.com', 'PhoneNumber': '9876543212', 'City': 'CHENNAI', 'StateName': ' KERALA', 'HashKey': 'E39B092D59AD0696D19150CC09D4C0F1EBDF5E5C3C5754981F878CF0F6369551', 'datafrom': 'target'}]
+ Null Value Check: PASS Details: No null values found.
+ scheck Check: PASS Details: Schema is correct!
+ 

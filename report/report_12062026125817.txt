@@ -1,0 +1,11 @@
+count check: PASS Details: Count is matching.Source count is 4 and target count is 4
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Duplicate check:: PASS Details: No Duplicate found!
+ Uniqueness Check: PASS Details: Duplicate counts per column: {'StateName': 0}
+ data compare Check: PASS Details: No mismatches found
+ Null Value Check: PASS Details: No null values found.
+ Schema Check: FAIL Details: schema failed columns Count: 2, Sample Failed Records: [{'source_col_name': 'customercount', 'target_col_name': None, 'source_data_type': 'int', 'target_data_type': None, 'status': 'fail'}, {'source_col_name': None, 'target_col_name': 'totalcustomers', 'source_data_type': None, 'target_data_type': 'int', 'status': 'fail'}]
+ 
