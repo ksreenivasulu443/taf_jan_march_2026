@@ -1,13 +1,12 @@
 SELECT *
-FROM
-(
-    SELECT
-        a.*,
-        ROW_NUMBER() OVER
-        (
-            PARTITION BY InsertDate
-            ORDER BY InsertDate DESC
-        ) AS rn
-    FROM bronze.Customer_bronze a
-) x
-WHERE rn = 1
+FROM bronze.Customer_bronze
+WHERE SourceFileName IN (
+    SELECT SourceFileName
+    FROM (
+        SELECT TOP (1)
+            SourceFileName
+        FROM bronze.Customer_bronze
+        GROUP BY SourceFileName
+        ORDER BY MAX(InsertDate) DESC
+    ) AS LatestFile
+)
