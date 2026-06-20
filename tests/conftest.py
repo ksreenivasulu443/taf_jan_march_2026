@@ -177,11 +177,12 @@ def read_data(spark_session, read_config, request):
 
 
 # ============================================================
-# Spark Session Fixture - added by sreeni
+# Spark Session Fixture - added by sreeni & anoop
 # ============================================================
 
 @pytest.fixture(scope="session")
 def spark_session():
+    print("this spark session")
 
     taf_jan = os.path.dirname(
         os.path.dirname(
