@@ -14,7 +14,7 @@ load_dotenv()
 # ============================================================
 # Project Root
 # ============================================================
-
+#Adding this line to check conflicts
 PROJECT_ROOT = os.path.dirname(
     os.path.dirname(
         os.path.abspath(__file__)
