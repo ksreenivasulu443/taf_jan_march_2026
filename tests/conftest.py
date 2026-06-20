@@ -9,6 +9,7 @@ from pyspark.sql import SparkSession
 from src.utility.read_file_lib import read_file
 from src.utility.read_db_lib import read_db
 
+#load local environment
 load_dotenv()
 
 # ============================================================
