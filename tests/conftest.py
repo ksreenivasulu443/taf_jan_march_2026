@@ -177,7 +177,7 @@ def read_data(spark_session, read_config, request):
 
 
 # ============================================================
-# Spark Session Fixture
+# Spark Session Fixture - added by sreeni
 # ============================================================
 
 @pytest.fixture(scope="session")
@@ -252,3 +252,6 @@ def spark_session():
     print("\nStopping Spark Session")
 
     spark.stop()
+
+def new_fixture():
+    print("\nNew Fixture")
