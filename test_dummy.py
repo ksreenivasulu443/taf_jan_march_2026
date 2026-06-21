@@ -1,3 +1,7 @@
 def get_employee():
-    print("hello john s")
-    return "John"
+    salary=2000
+    return "John smith"
+
+
+
+
