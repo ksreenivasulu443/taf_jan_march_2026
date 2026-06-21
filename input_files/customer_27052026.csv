@@ -1,0 +1,4 @@
+CustomerID,CustomerName,Email,PhoneNumber,City,StateName
+1,John Doe,john@gmail.com,9876543210,Bangalore,Karnataka
+2,Ram Kumar,ram@gmail.com,9876543211,Hyderabad,Telangana
+3,Smith,smith@gmail.com,9876543212,Chennai,Tamil Nadu

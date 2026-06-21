@@ -34,7 +34,6 @@ def read_file(spark, file_type, file_path,file_config,dir_path):
                              sep=file_config['sep'],
                              inferSchema=file_config['inferSchema']))
 
-
     return df
 
 #csv, json, parquet, avro, txt, xml

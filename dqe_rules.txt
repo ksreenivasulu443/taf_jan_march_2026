@@ -15,3 +15,13 @@ APAC - 500K ()
 200K
 
 delta
+
+1. Anoop - transaction table - feature_1234_an
+2. Rajeshwari - Orders - feature_1235_rj
+3. Chetan - modify table1 test_table1.py - feature_1236_ch
+
+1. main/master - production  env
+2. Release/develop - release branches ( UAT, QA, dev)
+3.  Feature --> individual development branches
+4 . hot fix --> if any issue found in production hot fix branch
+

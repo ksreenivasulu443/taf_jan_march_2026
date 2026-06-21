@@ -1,2 +1,0 @@
-Uniqueness Check: FAIL Details: Duplicate counts per column: {'customer_id': 0, 'email': 1}
- 

@@ -1,5 +1,5 @@
 from pyspark.sql.functions import lit, col, when, concat, sha2
-from utility.report_lib import write_output
+from src.utility.report_lib import write_output
 
 
 
@@ -22,7 +22,7 @@ def data_compare(source_df, target_df, key_columns,num_records=10):
     failed = failed.persist()
     failed_count = failed.count()
 
-    failed_count = failed.collect()
+    # failed_count = failed.collect()
     if failed_count > 0:
         failed_records = failed.limit(num_records).collect()  # Get the first 5 failing rows
         failed_preview = [row.asDict() for row in failed_records]

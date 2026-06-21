@@ -1,0 +1,29 @@
+source:
+  path: "abfss://raw@stretaildev426.dfs.core.windows.net/customer/customer_27052026.csv"
+  type: "csv"
+  file_config:
+    schema: "N"
+    header: True
+    sep: ","
+    inferSchema: True
+target:
+  type: "database"
+  transformation : ["N","NA"]
+  table: "[silver].[Customer_Clean]"
+  env: "qa"
+  exclude_cols: ['HashKey','SourceFileName','InsertDate']
+validation:
+  key_columns: ['CustomerID']
+  primary_keys: ['CustomerID']
+  unique_cols: ['CustomerID', 'Email']
+  not_null_cols: ['CustomerID', 'PhoneNumber']
+  regex_pattern_col: ['name','[a-zA-Z]']
+  range_col: ['CustomerID', 10,100]
+
+#source:
+#  path: "abfss://raw@stretaildev426.dfs.core.windows.net/customer/customer_27052026.csv"
+#  type: "csv"
+#  file_config:
+#    schema: "N"
+#    header: True
+#    sep: ","
