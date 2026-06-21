@@ -32,4 +32,4 @@ jobs:
 
     - name: Test with pytest
       run: |
-        pytest tests/table1 -v -s 
+        pytest tests/pl_customer/adls_bronzecustomer/test_customer_bronze.py -v -s 
