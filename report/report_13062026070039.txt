@@ -1,0 +1,51 @@
+count check: PASS Details: Count is matching.Source count is 2 and target count is 2
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Duplicate check:: PASS Details: No Duplicate found!
+ Uniqueness Check: PASS Details: Duplicate counts per column: {'CustomerID': 0, 'Email': 0}
+ data compare Check: PASS Details: No mismatches found
+ Null Value Check: PASS Details: No null values found.
+ scheck Check: PASS Details: Schema is correct!
+ count check: PASS Details: Count is matching.Source count is 4 and target count is 4
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Duplicate check:: FAIL Details: Duplicate count: 1 and sample records: [{'CustomerID': '2', 'count': 2}]
+ Uniqueness Check: FAIL Details: Duplicate counts per column: {'CustomerID': 1, 'Email': 1}
+ data compare Check: PASS Details: No mismatches found
+ Null Value Check: PASS Details: No null values found.
+ scheck Check: PASS Details: Schema is correct!
+ count check: PASS Details: Count is matching.Source count is 4 and target count is 4
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Duplicate check:: FAIL Details: Duplicate count: 1 and sample records: [{'CustomerID': 2, 'count': 2}]
+ Uniqueness Check: FAIL Details: Duplicate counts per column: {'CustomerID': 1, 'Email': 1}
+ data compare Check: FAIL Details: Data mismatch data: [{'CustomerID': 4, 'CustomerName': 'HARI', 'Email': 'hari@gmail.com', 'PhoneNumber': '32342434', 'City': 'BANGALORE', 'StateName': 'KARNATAKA', 'EffectiveStartDate': datetime.datetime(2026, 6, 13, 7, 3, 4, 743000), 'EffectiveEndDate': datetime.datetime(2099, 12, 31, 23, 59, 59), 'IsCurrent': True, 'datafrom': 'source'}, {'CustomerID': 2, 'CustomerName': 'RAHUL', 'Email': 'test@gmail.com', 'PhoneNumber': '9876543212', 'City': 'CHENNAI', 'StateName': ' KERALA', 'EffectiveStartDate': datetime.datetime(2026, 6, 13, 4, 54, 4, 970000), 'EffectiveEndDate': datetime.datetime(2099, 12, 31, 23, 59, 59), 'IsCurrent': False, 'datafrom': 'source'}, {'CustomerID': 2, 'CustomerName': 'TEST SCD2', 'Email': 'test@gmail.com', 'PhoneNumber': '9876543212', 'City': 'CHENNAI', 'StateName': 'KERALA', 'EffectiveStartDate': datetime.datetime(2026, 6, 13, 7, 3, 4, 743000), 'EffectiveEndDate': datetime.datetime(2099, 12, 31, 23, 59, 59), 'IsCurrent': True, 'datafrom': 'source'}, {'CustomerID': 2, 'CustomerName': 'RAHUL', 'Email': 'test@gmail.com', 'PhoneNumber': '9876543212', 'City': 'CHENNAI', 'StateName': ' KERALA', 'EffectiveStartDate': datetime.datetime(2026, 6, 13, 4, 54, 4, 970000), 'EffectiveEndDate': datetime.datetime(2026, 6, 13, 6, 37, 7, 763000), 'IsCurrent': False, 'datafrom': 'target'}, {'CustomerID': 4, 'CustomerName': 'HARI', 'Email': 'hari@gmail.com', 'PhoneNumber': '32342434', 'City': 'BANGALORE', 'StateName': 'KARNATAKA', 'EffectiveStartDate': datetime.datetime(2026, 6, 13, 6, 37, 7, 777000), 'EffectiveEndDate': datetime.datetime(9999, 12, 31, 0, 0), 'IsCurrent': True, 'datafrom': 'target'}, {'CustomerID': 2, 'CustomerName': 'TEST SCD2', 'Email': 'test@gmail.com', 'PhoneNumber': '9876543212', 'City': 'CHENNAI', 'StateName': 'KERALA', 'EffectiveStartDate': datetime.datetime(2026, 6, 13, 6, 37, 7, 777000), 'EffectiveEndDate': datetime.datetime(9999, 12, 31, 0, 0), 'IsCurrent': True, 'datafrom': 'target'}]
+ Null Value Check: PASS Details: No null values found.
+ Schema Check: FAIL Details: schema failed columns Count: 1, Sample Failed Records: [{'source_col_name': 'customerid', 'target_col_name': 'customerid', 'source_data_type': 'bigint', 'target_data_type': 'int', 'status': 'fail'}]
+ count check: PASS Details: Count is matching.Source count is 3 and target count is 3
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Duplicate check:: PASS Details: No Duplicate found!
+ Uniqueness Check: PASS Details: Duplicate counts per column: {'CustomerID': 0, 'Email': 0}
+ data compare Check: PASS Details: No mismatches found
+ Null Value Check: PASS Details: No null values found.
+ Schema Check: FAIL Details: schema failed columns Count: 1, Sample Failed Records: [{'source_col_name': 'customerid', 'target_col_name': 'customerid', 'source_data_type': 'bigint', 'target_data_type': 'string', 'status': 'fail'}]
+ count check: PASS Details: Count is matching.Source count is 2 and target count is 2
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: PASS Details: No extra records found in target.
+ Duplicate check:: PASS Details: No Duplicate found!
+ Uniqueness Check: PASS Details: Duplicate counts per column: {'StateName': 0}
+ data compare Check: PASS Details: No mismatches found
+ Null Value Check: PASS Details: No null values found.
+ scheck Check: PASS Details: Schema is correct!
+ 

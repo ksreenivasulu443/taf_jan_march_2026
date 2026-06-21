@@ -7,7 +7,9 @@ sys.dont_write_bytecode = True
 def main():
     # Customize the arguments for pytest run
     pytest_args = [
-        "tests/table1/test_transaction.py"
+        "tests/pl_customer",
+        "-v",
+        "-s"
     ]
 
     # Exit with pytest's exit code
