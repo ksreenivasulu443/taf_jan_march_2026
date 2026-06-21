@@ -34,10 +34,10 @@ jobs:
           echo "host=$DATABRICKS_HOST" >> ~/.databrickscfg
           echo "token=$DATABRICKS_TOKEN" >> ~/.databrickscfg
 
-      - name: Deploy Source Code
-        run: |
-          databricks workspace import_dir taf_jan_march_2026 \ /Shared/taf_jan_march_2026 --overwrite
+#      - name: Deploy Source Code
+#        run: |
+#          databricks workspace import_dir src  /Shared/taf_jan_march_2026 --overwrite
 
       - name: Run Databricks Job
         run: |
-          databricks jobs run-now --job-id 228463018371850
+          databricks jobs run-now --job-id 648113101343695
