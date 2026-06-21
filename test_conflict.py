@@ -1,2 +1,2 @@
 def get_employee():
-    return "John"
+    return "John Smith"
