@@ -36,7 +36,7 @@ jobs:
 
 #      - name: Deploy Source Code
 #        run: |
-#          databricks workspace import_dir src  /Shared/taf_jan_march_2026 --overwrite
+#          databricks workspace import_dir taf_jan_march_2026/  /Shared/taf_jan_march_2026 --overwrite
 
       - name: Run Databricks Job
         run: |
