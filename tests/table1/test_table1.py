@@ -12,16 +12,16 @@ from src.dqe.range_validation import range_check
 def test_one():
     assert True
 #
-# def test_count(read_data, read_config):
-#     source_df, target_df = read_data
-#     config = read_config
-#     print("source_df is")
-#     source_df.show()
-#     print("target_df is")
-#     target_df.show()
-#     key_columns = config['validation']['key_columns']
-#     status = count_check(source_df=source_df, target_df=target_df, key_columns=key_columns)
-#     assert status == 'PASS'
+def test_count(read_data, read_config):
+    source_df, target_df = read_data
+    config = read_config
+    print("source_df is")
+    source_df.show()
+    print("target_df is")
+    target_df.show()
+    key_columns = config['validation']['key_columns']
+    status = count_check(source_df=source_df, target_df=target_df, key_columns=key_columns)
+    assert status == 'PASS'
 #
 # def test_record_only_source(read_data, read_config):
 #     source_df, target_df = read_data
