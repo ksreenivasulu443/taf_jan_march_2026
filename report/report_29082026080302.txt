@@ -1,0 +1,5 @@
+count check: FAIL Details: Count is not matching.Source count is 4 and target count is 20
+                             difference is 16
+ Records Only in Source: PASS Details: No extra records found in source.
+ Records Only in Target: FAIL Details: Count: 16, Sample Failed Records: [{'CustomerID': '1004'}, {'CustomerID': '1004'}, {'CustomerID': '1004'}, {'CustomerID': '1004'}, {'CustomerID': '1003'}, {'CustomerID': '1003'}, {'CustomerID': '1003'}, {'CustomerID': '1003'}, {'CustomerID': '1002'}, {'CustomerID': '1002'}]
+ 
