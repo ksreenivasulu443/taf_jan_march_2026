@@ -29,4 +29,4 @@ jobs:
         pip install  pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run framework unit test
-      run:  pytest -v -s tests\pipeline_apr_customer_load\adls_customerLanding
+      run:  pytest -v -s tests/pipeline_apr_customer_load/adls_customerLanding
