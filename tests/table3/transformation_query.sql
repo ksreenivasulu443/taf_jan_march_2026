@@ -1,1 +1,0 @@
-select * from [dbo].[Customers] where customer_id=101

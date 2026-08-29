@@ -3,7 +3,7 @@
   "fields": [
     {
       "name": "CustomerID",
-      "type": "string",
+      "type": "integer",
       "nullable": true,
       "metadata": {}
     },
@@ -21,7 +21,7 @@
     },
     {
       "name": "PhoneNumber",
-      "type": "string",
+      "type": "long",
       "nullable": true,
       "metadata": {}
     },

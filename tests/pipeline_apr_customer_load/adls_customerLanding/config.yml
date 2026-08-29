@@ -1,15 +1,17 @@
 source:
-  path: "abfss://raw@stretaildev426.dfs.core.windows.net/customer/customer_27052026.csv"
+  path: "abfss://raw@stofedexdev.dfs.core.windows.net/customer/"
   type: "csv"
+  transformation : ["N","NA"]
   file_config:
-    schema: "N"
+    schema: "Y"
     header: True
     sep: ","
     inferSchema: True
+  exclude_cols: ['']
 target:
   type: "database"
-  transformation : ["N","NA"]
-  table: "[silver].[Customer_Clean]"
+  transformation : ["N","sql"]
+  table: "[bronze].[CustomerLanding]"
   env: "qa"
   exclude_cols: ['HashKey','SourceFileName','InsertDate']
 validation:

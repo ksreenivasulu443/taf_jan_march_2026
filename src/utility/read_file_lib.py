@@ -5,6 +5,7 @@ def read_file(spark, file_type, file_path,file_config,dir_path):
     if file_type == 'csv':
         if file_config['schema'] =='Y':
             schema = read_schema(dir_path)
+            print("Schema: ", schema)
             df = (spark.read.schema(schema).
                   csv(file_path,
                       header=file_config['header'],

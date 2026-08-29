@@ -9,20 +9,17 @@ from src.data_validations.schema_validation import schema_check
 from src.dqe.pattern_validation import regex_check
 from src.dqe.range_validation import range_check
 
-def test_one():
-    assert True
-#
-# def test_count(read_data, read_config):
-#     source_df, target_df = read_data
-#     config = read_config
-#     print("source_df is")
-#     source_df.show()
-#     print("target_df is")
-#     target_df.show()
-#     key_columns = config['validation']['key_columns']
-#     status = count_check(source_df=source_df, target_df=target_df, key_columns=key_columns)
-#     assert status == 'PASS'
-#
+def test_count(read_data, read_config):
+    source_df, target_df = read_data
+    config = read_config
+    print("source_df is")
+    source_df.show()
+    print("target_df is")
+    target_df.show()
+    key_columns = config['validation']['key_columns']
+    status = count_check(source_df=source_df, target_df=target_df, key_columns=key_columns)
+    assert status == 'PASS'
+# #
 # def test_record_only_source(read_data, read_config):
 #     source_df, target_df = read_data
 #     config = read_config
@@ -80,23 +77,4 @@ def test_one():
 #     source_df, target_df = read_data
 #     spark = spark_session
 #     status = schema_check(source=source_df, target=target_df, spark=spark)
-#     assert status == 'PASS'
-#
-# def test_name_regex(read_data, spark_session, read_config):
-#     source_df, target_df = read_data
-#     spark = spark_session
-#     config = read_config
-#     regex_pattern_col = config['validation']['regex_pattern_col'][0]
-#     regex_pattern = config['validation']['regex_pattern_col'][1]
-#     status = regex_check(df=target_df,column= regex_pattern_col,pattern=regex_pattern,failure_count=5)
-#     assert status == 'PASS'
-#
-# def test_range_check(read_data, spark_session, read_config):
-#     source_df, target_df = read_data
-#     spark = spark_session
-#     config = read_config
-#     range_col = config['validation']['range_col'][0]
-#     min_value = config['validation']['range_col'][1]
-#     max_value = config['validation']['range_col'][2]
-#     status = range_check(df=target_df,column=range,min_value=min_value,max_value=max_value,failure_count=5)
 #     assert status == 'PASS'

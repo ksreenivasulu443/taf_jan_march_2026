@@ -8,7 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
     <content url="jar://$USER_HOME$/Downloads/spark-3.4.2-bin-hadoop3/python/lib/py4j-0.10.9.7-src.zip!/" />
-    <orderEntry type="jdk" jdkName="Python 3.10 (python)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.11 (taf_april_2026_final_framework)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
